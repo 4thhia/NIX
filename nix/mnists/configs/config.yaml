@@ -1,0 +1,68 @@
+# config.yaml
+defaults:
+  - _self_
+  - dataset: mnifar
+  - algo: nix
+  - override hydra/sweeper: optuna
+  - override hydra/sweeper/sampler: tpe
+
+hydra:
+  sweeper:
+    direction: maximize
+    study_name: mnist
+    storage: null
+    n_trials: 30
+    n_jobs: 1
+    sampler:
+      seed: 42
+  run:
+    dir: _self_
+  job_logging:
+    disable_existing_loggers: True
+
+project: _ #!
+experiment_name: _ #!
+sub_experiment_name: _ #!
+run_time: _
+run_name: _
+
+training:
+  seed: 42
+  zdim: 16
+  valid_labels: False
+  num_epochs: 30
+  batch_size: 64
+  save_interval: 3
+  eval_interval: 3
+  save_top_k: 2
+
+weight:
+  activation: sigmoid
+  regularization_type: L2 # L2 or offset
+  regularization_coef: 0.0
+
+optimizers:
+  classifier:
+    lr: 0.001 #0.0001
+  encoder:
+    lr: 0.001 #0.0001
+  decoder:
+    lr: 0.001 #0.0001
+  weightunet:
+    lr: 0.0001 #0.0001
+
+checkpoint:
+  states:
+    - classifier
+    - encoder
+    - decoder
+    - weightunet
+
+load_model:
+  load: False
+  ckpt_dir: _
+  epoch: _
+  classifier: False
+  encoder: True
+  decoder: False
+  weightunet: False

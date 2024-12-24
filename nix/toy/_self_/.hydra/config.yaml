@@ -1,0 +1,70 @@
+project: GITS
+experiment_name: multi_aux
+sub_experiment_name: normalize_regularize
+run_time: _
+base_run_name: _
+run_name: _
+version: _
+runs: 1
+params:
+- 1.0
+- 0.0
+weights:
+- 1.0
+- 1.0
+- 1.0
+lmb: 10
+training:
+  beta: -0.5
+  max_iter: 500
+  regularizer: squared_loss
+  normalize: true
+main:
+  mux:
+  - 0.0
+  - 3.0
+  muy:
+  - 0.0
+  - 0.0
+  stdx:
+  - 1.0
+  - 0.8
+  stdy:
+  - 1.0
+  - 0.6
+  rho:
+  - 0.0
+  - 0.0
+  flat:
+  - false
+  - false
+aux:
+  mux:
+  - 2.0
+  - -1.0
+  - -0.4
+  muy:
+  - 1.0
+  - 1.4
+  - -1.2
+  stdx:
+  - 0.6
+  - 0.7
+  - 0.6
+  stdy:
+  - 0.6
+  - 0.7
+  - 0.6
+  rho:
+  - 0.0
+  - 0.0
+  - 0.0
+  flat:
+  - false
+  - false
+optimizers:
+  lr_params: 0.01
+  lr_weights: 0.1
+  lr_lmb: 0.1
+plot:
+  lim: 4.5

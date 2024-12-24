@@ -1,0 +1,9 @@
+name: nix_gap
+beta: -0.7
+lmb:
+  initial_value: 10.0
+  lr: 0.1
+gamma: 1.0 #! wandbのmain_norm, aux_norm, cosから決める
+gamma_coef: 0.0 #! # シグモイドの真ん中
+target_loss: 1.0 #! wandb見てlossのオーダーから決める
+gamma_bound: 0.5 #! シグモイドの図から適当に決めた

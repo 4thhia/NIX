@@ -1,0 +1,3 @@
+name: emnifar
+num_classes: 26
+intensity: 1.0

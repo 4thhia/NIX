@@ -1,0 +1,5 @@
+name: nix
+beta: 0.3
+lmb:
+  initial_value: 10.0
+  lr: 0.1
