@@ -1,0 +1,12 @@
+name: gap
+beta: 0.5
+lmb:
+  initial_value: 0.0
+  lr: 1.0 #! TUNING
+gamma:
+  max: 0.0
+  coef:
+    initial_value: -10.0
+    bound: 10.0
+    lr: 1.0 #! TUNING
+target_loss: 0.2

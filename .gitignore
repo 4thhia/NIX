@@ -1,0 +1,17 @@
+**/__pycache__/
+**/.pytest_cache/
+**/tmp/
+**/wandb/
+**/logs/
+**/models/
+**/datasets/
+**/out/
+**/outputs/
+**/mlruns/
+**/multirun/
+**/.DS_Store
+**/experiments/
+**/tests/
+**/hpo_results/
+**/result/
+run.sh

@@ -1,0 +1,5 @@
+name: nix
+beta: 0.5
+lmb:
+  initial_value: 0.0
+  lr: 1.0 #! TUNING

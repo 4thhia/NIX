@@ -1,0 +1,69 @@
+# config.yaml
+defaults:
+  - _self_
+  - dataset: mnifar
+  - algo: baseline
+  - override hydra/sweeper: optuna
+  - override hydra/sweeper/sampler: tpe
+
+hydra:
+  sweeper:
+    direction: maximize
+    study_name: mnifar
+    storage: null
+    n_trials: 30
+    n_jobs: 1
+    sampler:
+      seed: 42
+  run:
+    dir: _self_
+  job_logging:
+    disable_existing_loggers: True
+
+project: Nix2
+experiment_name: _
+run_time: _
+run_name: _
+
+training:
+  seed: 42
+  zdim: 16
+  valid_labels: [0, 1, 2, 3, 4]
+  num_epochs: 30
+  batch_size: 64
+  save_interval: 3
+  eval_interval: 3
+  save_top_k: 2
+
+weight:
+  activation: sigmoid
+  regularization_type: negative_square # negative_square or offset or smooth
+  regularization_coef: 1.0
+
+kld_coef: 0.01
+
+optimizers:
+  encoder:
+    lr: 0.001
+  decoder:
+    lr: 0.001
+  classifier:
+    lr: 0.001
+  weightunet:
+    lr: 0.0001
+
+checkpoint:
+  states:
+    - encoder
+    - decoder
+    - classifier
+    - weightunet
+
+load_model:
+  load: False
+  ckpt_dir: _
+  epoch: _
+  classifier: False
+  encoder: False
+  decoder: False
+  weightunet: False
