@@ -74,7 +74,7 @@ def setup_networks(
         tx=optim_weightunet,
     )
 
-    return Networks(state_classifier, state_encoder, state_decoder, state_weightunet, lmb)
+    return Networks(state_encoder, state_decoder, state_classifier, state_weightunet, lmb)
 
 @hydra.main(config_path="../_configs", config_name="config", version_base=None)
 def main(cfg: DictConfig) -> None:
