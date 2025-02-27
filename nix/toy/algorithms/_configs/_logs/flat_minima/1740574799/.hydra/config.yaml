@@ -1,0 +1,58 @@
+project: NIX2
+experiment_name: flat_minima
+sub_experiment_name: minus_beta__normalize_False__regu_coef_0_0
+run_time: 1740574799
+run_name: _
+params:
+- 0.2
+- 0.2
+weights:
+- 1.0
+- 1.0
+training:
+  max_iter: 500
+  activation: sigmoid
+  regularization_coef: 0.0
+  normalize: false
+main:
+  mux:
+  - 0.0
+  muy:
+  - 0.0
+  stdx:
+  - 1.5
+  stdy:
+  - 1.5
+  rho:
+  - 0.0
+  flat:
+  - true
+aux:
+  mux:
+  - -0.75
+  - 0.5
+  muy:
+  - 0.5
+  - -0.5
+  stdx:
+  - 0.5
+  - 0.8
+  stdy:
+  - 0.5
+  - 0.8
+  rho:
+  - 0.0
+  - 0.0
+  flat:
+  - false
+  - false
+optimizers:
+  lr_params: 0.001
+  lr_weights: 0.1
+plot:
+  lim: 2.0
+algorithm:
+  beta: -0.5
+  lmb:
+    initial_value: 10.0
+    lr: 0.1

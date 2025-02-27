@@ -1,0 +1,70 @@
+project: NIX2
+experiment_name: multi_aux
+sub_experiment_name: plus_beta__normalize_False__regu_coef_0_025
+run_time: 1740655163
+run_name: _
+params:
+- 1.0
+- 0.0
+weights:
+- 1.0
+- 1.0
+- 1.0
+training:
+  max_iter: 500
+  activation: None
+  regularization_coef: 0.025
+  normalize: false
+main:
+  mux:
+  - 0.0
+  - 3.0
+  muy:
+  - 0.0
+  - 0.0
+  stdx:
+  - 1.0
+  - 0.8
+  stdy:
+  - 1.0
+  - 0.6
+  rho:
+  - 0.0
+  - 0.0
+  flat:
+  - false
+  - false
+aux:
+  mux:
+  - 2.0
+  - -1.0
+  - -0.4
+  muy:
+  - 1.0
+  - 1.4
+  - -1.2
+  stdx:
+  - 0.6
+  - 0.7
+  - 0.6
+  stdy:
+  - 0.6
+  - 0.7
+  - 0.6
+  rho:
+  - 0.0
+  - 0.0
+  - 0.0
+  flat:
+  - false
+  - false
+optimizers:
+  lr_params: 0.001
+  lr_weights: 0.1
+plot:
+  lim: 4.5
+algorithm:
+  beta: 0.5
+  lmb:
+    initial_value: 1.0
+    lr: 0.1

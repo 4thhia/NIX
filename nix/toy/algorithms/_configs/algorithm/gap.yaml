@@ -1,0 +1,11 @@
+beta: 0.5
+lmb:
+  initial_value: 0.0
+  lr: 0.1
+gamma:
+  max: 0.01
+  coef:
+    initial_value: -100.0
+    lr: 1.0
+    bound: 100.0
+target_loss: -10

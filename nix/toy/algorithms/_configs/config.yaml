@@ -1,0 +1,50 @@
+# config.yaml
+defaults:
+  - _self_
+  - algorithm: nix
+
+hydra:
+  run:
+    dir: _self_
+  job_logging:
+    disable_existing_loggers: true
+
+project: NIX2
+experiment_name: _
+sub_experiment_name: _
+run_time: _
+run_name: _
+
+
+params: [1.0, 0.0] # [-0.19, 0.68]
+weights: [1.0, 1.0, 1.0]
+
+
+training:
+  max_iter: 500
+  activation: None
+  regularization_coef: 0.0
+  normalize: 0.0
+
+
+main:
+  mux: [0.0, 3.0]
+  muy: [0.0, 0.0]
+  stdx: [1.0, 0.80]
+  stdy: [1.0, 0.60]
+  rho: [0.0, 0.0]
+  flat: [False, False]
+aux:
+  mux: [2.0, -1.0, -0.4]
+  muy: [1.0, 1.4, -1.2]
+  stdx: [0.60, 0.7, 0.60]
+  stdy: [0.60, 0.7, 0.60]
+  rho: [0.0, 0.0, 0.0]
+  flat: [False, False]
+
+optimizers:
+  lr_params: 0.001
+  lr_weights: 0.1
+
+plot:
+  lim: 4.5

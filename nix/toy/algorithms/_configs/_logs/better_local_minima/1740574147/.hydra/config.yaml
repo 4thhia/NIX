@@ -1,0 +1,71 @@
+project: NIX2
+experiment_name: better_local_minima
+sub_experiment_name: normalize_regularize
+run_time: 1740574147
+run_name: _
+params:
+- -0.25
+- 0.75
+weights:
+- 1.0
+- 1.0
+- 1.0
+training:
+  max_iter: 500
+  activation: sigmoid
+  regularization_coef: 1.0
+  normalize: true
+main:
+  mux:
+  - 0.5
+  - -0.5
+  muy:
+  - 0.0
+  - 0.0
+  stdx:
+  - 0.3
+  - 0.5
+  stdy:
+  - 0.3
+  - 0.5
+  rho:
+  - 0.0
+  - 0.0
+  flat:
+  - false
+  - false
+aux:
+  mux:
+  - 1.0
+  - 2.0
+  - -0.5
+  muy:
+  - -1.0
+  - 0.0
+  - 1.0
+  stdx:
+  - 0.6
+  - 0.5
+  - 0.6
+  stdy:
+  - 0.6
+  - 0.5
+  - 0.6
+  rho:
+  - 0.0
+  - 0.0
+  - 0.0
+  flat:
+  - false
+  - false
+  - false
+optimizers:
+  lr_params: 0.001
+  lr_weights: 0.1
+plot:
+  lim: 2.0
+algorithm:
+  beta: -0.5
+  lmb:
+    initial_value: 10.0
+    lr: 0.1
