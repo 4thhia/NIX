@@ -49,12 +49,12 @@ def train(
     kld_coef: float,
     weight_regularization_type: str,
     weight_regularization_coef: float,
-    lr_gamma_coef: float,
-    gamma_coef_bound: float,
-    gamma_max: float,
-    target_loss: float,
-    lr_lmb: float,
     beta: float,
+    lr_lmb: float,
+    gamma_max: float,
+    gamma_coef_bound: float,
+    lr_gamma_coef: float,
+    target_loss: float,
 ):
     # Applies negative_square or offset regularization to the weights
     def weight_regularization_loss_fn(weights):

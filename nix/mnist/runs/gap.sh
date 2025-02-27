@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export XLA_PYTHON_CLIENT_MEM_FRACTION=.90
-export CUDA_VISIBLE_DEVICES=0 #,1,2
+export CUDA_VISIBLE_DEVICES=1 #,1,2
 
 
 UNIXTIME=$(date +%s)
@@ -18,8 +18,8 @@ ACTIVATION="sigmoid"
 LEGURALIZER="negative_square" # negative_square or offset or smooth
 LEGURALIZATION_COEF="0.0"
 
-BETA="0.3"
-LR_LMB="1"
+BETA="-0.3"
+LR_LMB="100"
 
 
 python3 algos/${ALGO}/main.py \

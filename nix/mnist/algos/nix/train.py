@@ -138,7 +138,7 @@ def train(
         new_decoder = networks.decoder.apply_gradients(grads=grads_decoder)
         new_classifier = networks.classifier.apply_gradients(grads=grads_classifier)
         new_weightunet = networks.weightunet.apply_gradients(grads=grads_weightunet)
-        new_lmb = jnp.maximum(0.0, networks.lmb + lr_lmb * (jnp.mean(jnp.sum(main_grads * (beta * main_grads - aux_grads), axis=1)) - gamma))
+        new_lmb = jnp.maximum(0.0, networks.lmb + lr_lmb * jnp.mean(jnp.sum(main_grads * (beta * main_grads - aux_grads), axis=1)))
 
         # Update Network
         networks = networks.replace(encoder=new_encoder, decoder=new_decoder, classifier=new_classifier, weightunet=new_weightunet, lmb=new_lmb)

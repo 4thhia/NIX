@@ -18,7 +18,7 @@ ACTIVATION="sigmoid"
 LEGURALIZER="negative_square" # negative_square or offset or smooth
 LEGURALIZATION_COEF="0.0"
 
-BETA="0.3"
+BETA="-0.3"
 LR_LMB="1"
 
 

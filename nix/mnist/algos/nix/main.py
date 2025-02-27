@@ -99,7 +99,7 @@ def main(cfg: DictConfig) -> None:
     networks = setup_networks(
         rng=rng_setup,
         dummy_inputs=dummy_inputs,
-        num_classes=len(cfg.training.valid_labels) ,
+        num_classes=len(cfg.training.valid_labels),
         zdim=cfg.training.zdim,
         batch_size=cfg.training.batch_size,
         weight_activation=cfg.weight.activation,

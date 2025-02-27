@@ -1,7 +1,7 @@
 name: gap
 beta: 0.5
 lmb:
-  initial_value: 0.0
+  initial_value: 10.0
   lr: 1.0 #! TUNING
 gamma:
   max: 0.0

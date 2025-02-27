@@ -75,7 +75,7 @@ def setup_networks(
         tx=optim_weightunet,
     )
 
-    return Networks(state_classifier, state_encoder, state_decoder, state_weightunet, lmb, gamma_coef)
+    return Networks(state_encoder, state_decoder, state_classifier, state_weightunet, lmb, gamma_coef)
 
 @hydra.main(config_path="../_configs", config_name="config", version_base=None)
 def main(cfg: DictConfig) -> None:
@@ -101,7 +101,7 @@ def main(cfg: DictConfig) -> None:
     networks = setup_networks(
         rng=rng_setup,
         dummy_inputs=dummy_inputs,
-        num_classes=num_classes,
+        num_classes=len(cfg.training.valid_labels),
         zdim=cfg.training.zdim,
         batch_size=cfg.training.batch_size,
         weight_activation=cfg.weight.activation,
@@ -138,12 +138,12 @@ def main(cfg: DictConfig) -> None:
             kld_coef=cfg.kld_coef,
             weight_regularization_type=cfg.weight.regularization_type,
             weight_regularization_coef=cfg.weight.regularization_coef,
-            lr_gamma_coef=cfg.algo.gamma.coef.lr,
-            gamma_coef_bound=cfg.algo.gamma.coef.bound,
-            gamma_max=cfg.algo.gamma.max,
-            target_loss=cfg.algo.target_loss,
-            lr_lmb=cfg.algo.lmb.lr,
             beta=cfg.algo.beta,
+            lr_lmb=cfg.algo.lmb.lr,
+            gamma_max=cfg.algo.gamma.max,
+            gamma_coef_bound=cfg.algo.gamma.coef.bound,
+            lr_gamma_coef=cfg.algo.gamma.coef.lr,
+            target_loss=cfg.algo.target_loss,
         )
         logger.log_metrics(metrics)
 
