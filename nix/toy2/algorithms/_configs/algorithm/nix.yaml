@@ -1,0 +1,5 @@
+name: nix
+beta: 0.5 # range(-1.0, 1.0)
+lmb:
+  initial_value: 0.0
+  lr: 0.1

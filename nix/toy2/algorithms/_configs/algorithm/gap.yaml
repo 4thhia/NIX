@@ -1,0 +1,12 @@
+name: gap
+beta: 0.5 # range(-1.0, 1.0)
+lmb:
+  initial_value: 0.0
+  lr: 0.1
+gamma:
+  max: 0.01
+  coef:
+    initial_value: -6.0 # minimum
+    lr: 0.1 # random
+    bound: 6.0 # 0.1 ~ 0.9
+target_loss: -10

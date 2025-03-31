@@ -1,0 +1,14 @@
+- experiment_name=1d_gap
+- sub_experiment_name=test
+- algorithm=sgd
+- training.max_iter=100
+- optimizers.lr_params=0.01
+- params=[1.0]
+- main.mux=[0.0]
+- main.muy=
+- main.stdx=[0.38]
+- main.stdy=
+- main.rho=
+- main.flat=[False]
+- plot.lim=1.0
+- run_time=1743377315

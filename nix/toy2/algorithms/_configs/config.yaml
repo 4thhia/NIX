@@ -1,0 +1,53 @@
+# config.yaml
+defaults:
+  - _self_
+  - algorithm: sgd
+
+hydra:
+  run:
+    dir: _self_
+  job_logging:
+    disable_existing_loggers: true
+
+project: GITS
+experiment_name: multi_aux
+sub_experiment_name: normalize_regularize
+run_time: _
+base_run_name: _
+run_name: _
+version: _
+runs: 1
+dim: 1
+
+params: [1.0, 0.0] # [-0.19, 0.68]
+weights: [1.0, 1.0, 1.0]
+
+training:
+  max_iter: 50
+  activation: sigmoid
+  regularization_coef: 0.0 # squared_loss # None # squared_loss
+  normalize: 0.0
+
+main:
+  mux: [0.0, 3.0]
+  muy: [0.0, 0.0]
+  stdx: [1.0, 0.80]
+  stdy: [1.0, 0.60]
+  rho: [0.0, 0.0]
+  flat: [False, False]
+aux:
+  mux: [2.0, -1.0, -0.4]
+  muy: [1.0, 1.4, -1.2]
+  stdx: [0.60, 0.7, 0.60]
+  stdy: [0.60, 0.7, 0.60]
+  rho: [0.0, 0.0, 0.0]
+  flat: [False, False]
+
+optimizers:
+  lr_params: 0.001
+  lr_weights: 0.1
+  lr_lmb: 0.1
+
+plot:
+  x_lim: 4.5
+  weight_lim: 1.0

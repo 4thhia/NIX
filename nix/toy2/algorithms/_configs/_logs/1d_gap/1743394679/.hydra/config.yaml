@@ -1,0 +1,51 @@
+project: GITS
+experiment_name: 1d_gap
+sub_experiment_name: test
+run_time: 1743394679
+base_run_name: _
+run_name: _
+version: _
+runs: 1
+dim: 1
+params:
+- 1.0
+weights:
+- 1.0
+training:
+  max_iter: 200
+  activation: sigmoid
+  regularization_coef: 0.01
+  normalize: 0.0
+main:
+  mux:
+  - 0.0
+  muy: ''
+  stdx:
+  - 0.38
+  stdy: ''
+  rho: ''
+  flat:
+  - false
+aux:
+  mux:
+  - 0.85
+  muy: ''
+  stdx:
+  - 0.28
+  stdy: ''
+  rho: ''
+  flat:
+  - false
+optimizers:
+  lr_params: 0.001
+  lr_weights: 0.1
+  lr_lmb: 0.1
+plot:
+  x_lim: 1.0
+  weight_lim: 1.0
+algorithm:
+  name: nix
+  beta: -0.5
+  lmb:
+    initial_value: 0.0
+    lr: 0.001

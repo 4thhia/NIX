@@ -1,0 +1,62 @@
+project: GITS
+experiment_name: 1d_gap
+sub_experiment_name: test
+run_time: 1743377315
+base_run_name: _
+run_name: _
+version: _
+runs: 1
+dim: 1
+params:
+- 1.0
+weights:
+- 1.0
+- 1.0
+- 1.0
+training:
+  max_iter: 100
+  activation: sigmoid
+  regularization_coef: 0.0
+  normalize: 0.0
+main:
+  mux:
+  - 0.0
+  muy: ''
+  stdx:
+  - 0.38
+  stdy: ''
+  rho: ''
+  flat:
+  - false
+aux:
+  mux:
+  - 2.0
+  - -1.0
+  - -0.4
+  muy:
+  - 1.0
+  - 1.4
+  - -1.2
+  stdx:
+  - 0.6
+  - 0.7
+  - 0.6
+  stdy:
+  - 0.6
+  - 0.7
+  - 0.6
+  rho:
+  - 0.0
+  - 0.0
+  - 0.0
+  flat:
+  - false
+  - false
+optimizers:
+  lr_params: 0.01
+  lr_weights: 0.1
+  lr_lmb: 0.1
+plot:
+  lim: 1.0
+algorithm:
+  name: sgd

@@ -1,0 +1,14 @@
+DIM=1
+
+PARAMS="[1.2]"
+WEIGHTS="[1.0]"
+LAMBDA="0"
+
+
+MAIN_MUX="[0.0]"
+MAIN_STDX="[0.38]"
+MAIN_FLAT="[False]"
+
+AUX_MUX="[0.85]"
+AUX_STDX="[0.28]"
+AUX_FLAT="[False]"
